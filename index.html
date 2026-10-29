@@ -1,0 +1,1228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Erin Floyd | Global Content &amp; Growth</title>
+  <meta name="robots" content="noindex" />
+  <meta name="description" content="Performance creative strategy, audience discovery and AI-enabled creative systems by Erin Floyd." />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500;700;900&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --claret: #373634;
+      --dusty:  #DCEB7D;
+      --blush:  #EEF3E1;
+      --white:  #F7F7F7;
+      --dark:   #000000;
+      --mid:    rgba(55,54,52,0.6);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { background: url('texture-bg.jpg') center top no-repeat; background-size: 100% 100%; color: var(--dark); font-family: 'DM Sans', sans-serif; font-weight: 300; overflow-x: hidden; }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1.4rem 4rem;
+      background: rgba(247,247,247,0.92); backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(55,54,52,0.12);
+    }
+    .nav-logo { font-family: 'DM Sans', sans-serif; font-size: 1.5rem; font-weight: 700; color: var(--claret); text-decoration: none; }
+    .nav-links { display: flex; gap: 2.4rem; list-style: none; }
+    .nav-links a { text-decoration: none; color: var(--dark); font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 500; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--claret); }
+
+    /* HERO */
+    #home { background: var(--claret); padding: 8rem 8rem 3rem; }
+    .hero-eyebrow { font-size: 0.72rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--dusty); margin-bottom: 1rem; }
+    .hero-name { font-family: 'DM Sans', sans-serif; font-size: clamp(3rem, 5vw, 5.5rem); font-weight: 900; color: rgba(250,246,244,0.38); line-height: 1; margin-bottom: 0; }
+    .hero-name em { font-style: italic; color: var(--white); }
+    .hero-tagline { font-size: 1rem; color: rgba(238,243,225,0.9); max-width: 620px; line-height: 1.8; margin: 1.4rem 0 2rem; }
+    .hero-cta { display: inline-block; padding: 0.9rem 2.2rem; background: var(--dusty); color: var(--claret); text-decoration: none; font-weight: 500; font-size: 0.85rem; letter-spacing: 0.06em; text-transform: uppercase; transition: background 0.2s, transform 0.2s; margin-bottom: 1.8rem; }
+    .hero-cta:hover { background: var(--white); color: var(--claret); transform: translateY(-2px); }
+    .hero-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .hero-tag { padding: 0.35rem 0.9rem; background: rgba(238,243,225,0.12); border: 1px solid rgba(238,243,225,0.3); color: rgba(238,243,225,0.85); font-size: 0.7rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; border-radius: 2px; }
+
+    /* STATS BAND */
+    .hero-stats-band { background: var(--blush); padding: 0; overflow: hidden; border-top: 1px solid rgba(55,54,52,0.1); border-bottom: 1px solid rgba(55,54,52,0.1); }
+    .stats-track { display: flex; width: max-content; animation: statsScroll 35s linear infinite; align-items: stretch; }
+    .stats-track:hover { animation-play-state: paused; }
+    .stat-item { display: flex; flex-direction: column; justify-content: center; padding: 0.9rem 2.8rem; border-right: 1px solid rgba(55,54,52,0.15); flex-shrink: 0; }
+    @keyframes statsScroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+    .stat-num { font-family: 'DM Sans', sans-serif; font-size: 1.9rem; font-weight: 700; color: var(--claret); display: block; line-height: 1.1; }
+    .stat-label { font-size: 0.68rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--mid); }
+
+    /* TESTIMONIAL */
+    #testimonial { background: var(--dark); padding: 6rem 8rem; position: relative; overflow: hidden; }
+    #testimonial::before { content: '\201C'; font-family: 'DM Sans', sans-serif; font-weight: 900; font-size: 22rem; line-height: 1; color: var(--dusty); opacity: 0.12; position: absolute; top: -3rem; left: 4rem; pointer-events: none; }
+    .testimonial-inner { max-width: 860px; position: relative; z-index: 1; }
+    .testimonial-quote { font-family: 'DM Sans', sans-serif; font-size: clamp(1.3rem, 2.2vw, 1.85rem); color: var(--white); line-height: 1.7; margin-bottom: 2.2rem; }
+    .testimonial-quote em { font-style: normal; color: var(--dusty); font-weight: 700; }
+    .testimonial-cite { display: inline-block; font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--dusty); border-left: 3px solid var(--dusty); padding-left: 1rem; line-height: 1.9; }
+    .testimonial-cite span { display: block; color: rgba(220,235,125,0.55); letter-spacing: 0.08em; text-transform: none; font-size: 0.75rem; }
+
+    /* LOGOS */
+    #clients { background: var(--white); padding: 15px 0 1.2rem; border-bottom: 1px solid rgba(55,54,52,0.1); overflow: hidden; }
+    .clients-label { font-size: 0.72rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--mid); text-align: center; margin-bottom: 0.7rem; }
+    .logo-track-wrapper { overflow: hidden; position: relative; width: 100%; }
+    .logo-track-wrapper::before, .logo-track-wrapper::after { content: ''; position: absolute; top: 0; bottom: 0; width: 80px; z-index: 2; pointer-events: none; }
+    .logo-track-wrapper::before { left: 0; background: linear-gradient(to right, var(--white), transparent); }
+    .logo-track-wrapper::after  { right: 0; background: linear-gradient(to left, var(--white), transparent); }
+    .logo-track { display: flex; align-items: center; gap: 4rem; width: max-content; animation: logoScroll 35s linear infinite; }
+    .logo-track:hover { animation-play-state: paused; }
+    .logo-item { flex-shrink: 0; display: flex; align-items: center; justify-content: center; height: 48px; }
+    .logo-item img { max-height: 48px; max-width: 140px; width: auto; object-fit: contain; }
+    @keyframes logoScroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+    /* CASES SECTION */
+    #cases { padding: 6rem 6rem 6rem; max-width: 1180px; margin: 0 auto; }
+    .section-label { font-size: 0.72rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--dusty); margin-bottom: 0.6rem; }
+    .section-title { font-family: 'Playfair Display', serif; font-size: clamp(2.2rem, 4vw, 3.4rem); font-weight: 700; color: var(--claret); line-height: 1.1; margin-bottom: 1rem; }
+    .divider { width: 48px; height: 3px; background: var(--dusty); margin-bottom: 2.5rem; }
+    .subgroup-label { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.5rem; font-weight: 700; text-align: center; color: var(--claret); border-top: 1px solid rgba(55,54,52,0.18); padding-top: 1.6rem; margin: 3rem 0 0.6rem; }
+    .subgroup-label:first-of-type { border-top: none; margin-top: 0; padding-top: 0; }
+    .cards-stack { max-width: 80%; margin: 0 auto; }
+
+    /* CASE CARD */
+    .case-card { border-radius: 14px; margin-bottom: 18px; overflow: hidden; background: #fff; transition: transform 0.2s; position: relative; }
+    .case-card:hover { transform: translateY(-2px); }
+    .card-img { width: 100%; height: 200px; background-size: cover; background-position: center; background-repeat: no-repeat; border-bottom: 1px solid rgba(55,54,52,0.09); }
+    .card-img-plain { filter: none !important; }
+
+    /* SOLID-COLOUR BLOCK HEADER */
+    .card-block-header { display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; min-height: 150px; padding: 2rem 2.6rem; cursor: pointer; }
+    .card-block-left { min-width: 0; }
+    .card-block-eyebrow { font-size: 10.5px; letter-spacing: 0.16em; text-transform: uppercase; opacity: 0.65; margin-bottom: 0.6rem; }
+    .card-block-title { font-family: 'DM Sans', sans-serif; font-weight: 700; font-size: clamp(1.25rem, 2.1vw, 1.7rem); line-height: 1.25; }
+    .card-block-right { display: flex; align-items: center; gap: 1rem; flex-shrink: 0; }
+    .card-block-demo { font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 600; color: inherit; text-decoration: none; border: 1.5px solid currentColor; padding: 0.5rem 1rem; border-radius: 20px; white-space: nowrap; opacity: 0.85; transition: opacity 0.2s; }
+    .card-block-demo:hover { opacity: 1; }
+    .card-block-toggle { flex-shrink: 0; width: 42px; height: 42px; border-radius: 50%; border: 1.5px solid currentColor; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 300; line-height: 1; transition: transform 0.3s; }
+    .case-card.expanded .card-block-toggle { transform: rotate(45deg); }
+    .block-dark   { background: var(--claret); color: var(--blush); }
+    .block-light  { background: var(--white); color: var(--claret); border: 1.5px solid rgba(55,54,52,0.18); }
+    .block-accent { background: var(--dusty); color: var(--claret); }
+    .block-mint   { background: var(--blush); color: var(--claret); }
+    .block-black  { background: #000000; color: var(--dusty); }
+    .card-detail { max-height: 0; overflow: hidden; transition: max-height 0.6s ease; }
+    .card-detail.expanded { max-height: 10000px; }
+
+    .card-subheader { padding: 1.2rem 1.6rem 0; font-size: 12px; color: #666; line-height: 1.65; }
+
+    .card-cols { display: grid; grid-template-columns: 1fr 2fr 1fr; border-bottom: 1px solid rgba(55,54,52,0.09); }
+    .card-col { padding: 1.3rem 1.5rem; }
+    .card-col + .card-col { border-left: 1px solid rgba(55,54,52,0.09); }
+    .col-label { font-family: 'DM Sans', sans-serif; font-size: 16px; font-weight: 700; color: var(--claret); margin-bottom: 0.65rem; }
+    .col-problem-text { font-size: 12px; color: #666; line-height: 1.72; font-weight: 300; font-style: italic; padding-left: 10px; border-left: 1.5px solid rgba(55,54,52,0.13); }
+    .col-approach-list { list-style: none; display: flex; flex-direction: column; gap: 7px; }
+    .col-approach-list li { font-size: 12px; color: #555; font-weight: 300; line-height: 1.65; padding-left: 14px; position: relative; }
+    .col-approach-list li::before { content: '•'; position: absolute; left: 0; color: var(--dusty); font-size: 9px; top: 0.22em; }
+    .col-outcomes-list { display: flex; flex-direction: column; gap: 10px; }
+    .outcome-row { display: flex; flex-direction: column; gap: 2px; }
+    .outcome-num { font-family: 'DM Sans', sans-serif; font-size: 1.9rem; font-weight: 700; line-height: 1.15; display: block; color: var(--claret); }
+    .outcome-sub { font-size: 10.5px; color: #999; font-weight: 400; line-height: 1.4; margin-top: 0.2rem; }
+
+    /* DIAGRAM */
+    .card-diagram-wrap { padding: 1.6rem 1.8rem 0.4rem; border-bottom: 1px solid rgba(55,54,52,0.09); background: #fff; overflow-x: auto; }
+    .card-diagram-caption { font-size: 10.5px; color: var(--mid); font-style: italic; margin: 0.7rem 0 1rem; text-align: center; }
+
+    /* TERRITORY GRID */
+    .territory-grid-wrap { padding: 1.6rem 1.8rem 1.3rem; border-bottom: 1px solid rgba(55,54,52,0.09); background: rgba(55,54,52,0.03); }
+    .territory-grid-label { font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--mid); margin-bottom: 0.9rem; font-weight: 600; }
+    .territory-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.8rem; }
+    .territory-card { border: 1px solid rgba(55,54,52,0.16); border-radius: 10px; padding: 0.9rem 1rem; background: #fff; transition: border-color 0.2s, transform 0.2s; }
+    .territory-card:hover { border-color: var(--claret); transform: translateY(-2px); }
+    .territory-card.accent { border: 1.5px solid var(--claret); background: rgba(55,54,52,0.03); }
+    .territory-name { font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 700; color: var(--dark); margin-bottom: 0.5rem; line-height: 1.25; }
+    .territory-stage-pill { display: inline-block; font-size: 8px; letter-spacing: 0.06em; text-transform: uppercase; font-weight: 600; padding: 2px 8px; border-radius: 20px; margin-bottom: 0.65rem; white-space: nowrap; }
+    .territory-field { margin-bottom: 0.5rem; }
+    .territory-field:last-child { margin-bottom: 0; }
+    .territory-field-label { font-size: 8px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--mid); font-weight: 600; margin-bottom: 0.15rem; }
+    .territory-field-text { font-size: 11px; color: #555; line-height: 1.5; }
+
+    /* HOOKS TABLE */
+    .hooks-example-wrap { padding: 1.6rem 1.8rem 1.8rem; border-bottom: 1px solid rgba(55,54,52,0.09); background: #fff; }
+    .hooks-table-wrap { overflow-x: auto; }
+    .hooks-table { width: 100%; border-collapse: collapse; font-size: 11.5px; }
+    .hooks-table th { font-family: 'DM Sans', sans-serif; font-weight: 700; font-size: 13px; text-align: left; color: var(--claret); padding: 0 0.9rem 0.6rem 0; border-bottom: 1.5px solid rgba(55,54,52,0.15); }
+    .hooks-table td { padding: 0.7rem 0.9rem 0.7rem 0; border-bottom: 1px solid rgba(55,54,52,0.08); vertical-align: top; line-height: 1.55; color: #444; }
+    .hooks-table td:first-child { font-weight: 600; color: var(--dark); white-space: nowrap; }
+    .hooks-table td:last-child { color: #777; font-style: italic; }
+
+    .show-more-toggle { display: block; margin: 0 auto 1.8rem; padding: 0.6rem 1.5rem; background: rgba(55,54,52,0.05); border: 1px solid rgba(55,54,52,0.3); border-radius: 20px; color: var(--claret); font-size: 0.78rem; font-weight: 600; letter-spacing: 0.03em; cursor: pointer; text-align: center; transition: background 0.2s; }
+    .show-more-toggle:hover { background: rgba(55,54,52,0.1); }
+    .show-more-toggle .chevron { display: inline-block; margin-left: 0.4rem; transition: transform 0.25s; }
+    .show-more-toggle.expanded .chevron { transform: rotate(180deg); }
+    .collapsible-cards { max-height: 0; overflow: hidden; transition: max-height 0.5s ease; }
+    .collapsible-cards.expanded { max-height: 8000px; }
+
+    /* CONTACT */
+    #contact { padding: 5rem; background: var(--blush); display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: start; }
+    #contact .section-title { color: var(--claret); }
+    .contact-intro { font-size: 1rem; line-height: 1.85; color: #000000; margin-bottom: 2rem; }
+    .ci { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.2rem; }
+    .ci-icon { width: 42px; height: 42px; background: var(--claret); border-radius: 2px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 1rem; color: var(--white); }
+    .ci-detail span { display: block; font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--mid); margin-bottom: 0.15rem; }
+    .ci-detail a, .ci-detail p { font-size: 0.95rem; color: var(--claret); font-weight: 500; text-decoration: none; }
+    .ci-detail a:hover { text-decoration: underline; }
+    .form { display: flex; flex-direction: column; gap: 1.2rem; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
+    .ff { display: flex; flex-direction: column; gap: 0.4rem; }
+    .ff label { font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--mid); font-weight: 500; }
+    .ff input, .ff textarea { background: var(--white); border: 1px solid rgba(55,54,52,0.2); padding: 0.85rem 1rem; font-family: 'DM Sans', sans-serif; font-size: 0.92rem; color: var(--dark); outline: none; transition: border-color 0.2s; border-radius: 2px; }
+    .ff input:focus, .ff textarea:focus { border-color: var(--claret); }
+    .ff textarea { resize: vertical; min-height: 120px; }
+    .btn-send { padding: 1rem 2.4rem; background: var(--claret); color: var(--white); border: none; font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 500; cursor: pointer; transition: background 0.2s, transform 0.2s; align-self: flex-start; }
+    .btn-send:hover { background: var(--mid); transform: translateY(-2px); }
+
+    /* FOOTER */
+    footer { background: var(--dark); padding: 2rem 6rem; display: flex; justify-content: space-between; align-items: center; }
+    footer p { font-size: 0.8rem; color: rgba(220,235,125,0.55); }
+    .footer-logo { font-family: 'DM Sans', sans-serif; font-size: 1.2rem; color: var(--dusty); font-weight: 700; }
+
+    /* ANIMATIONS */
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    /* RESPONSIVE */
+    @media (max-width: 960px) {
+      nav { padding: 1.2rem 1.8rem; }
+      #home { padding: 7rem 2rem 3rem; }
+      #cases { padding: 3rem 1.5rem; }
+      .card-cols { grid-template-columns: 1fr; }
+      .card-col + .card-col { border-left: none; border-top: 1px solid rgba(55,54,52,0.09); }
+      .territory-grid { grid-template-columns: 1fr; }
+      .hooks-table { font-size: 10.5px; }
+      #testimonial, #contact { padding: 3.5rem 2rem; }
+      #contact { grid-template-columns: 1fr; gap: 2.5rem; }
+      footer { flex-direction: column; gap: 0.8rem; text-align: center; padding: 1.6rem 2rem; }
+      .form-row { grid-template-columns: 1fr; }
+    }
+
+    /* ===== V3: CINEMATIC GRADIENT ===== */
+    :root { --ink:#050608; --glass:rgba(255,255,255,0.05); --line:rgba(255,255,255,0.14); --txt:#F4EFEA; --txt2:rgba(244,239,234,0.68); --ember:#FF6A2B; --azure:#2E8FD1; }
+    body { background: var(--ink); color: var(--txt); font-family: 'Inter','Helvetica Neue',Helvetica,Arial,sans-serif; font-weight: 300; }
+    nav { background: transparent; backdrop-filter: none; border-bottom: none; padding: 2rem 4.5rem; }
+    .nav-logo { font-size: 0.95rem; font-weight: 500; letter-spacing: 0.32em; text-transform: uppercase; color: #fff; }
+    .nav-links a { color:#fff; font-size: 0.68rem; letter-spacing: 0.2em; font-weight: 400; opacity:.85; }
+    .nav-links a:hover { color:#fff; opacity:1; }
+    #home { position: relative; min-height: 100vh; display:flex; flex-direction:column; justify-content:flex-end; padding: 9rem 4.5rem 0; background: #000 url('grainy-gradient.avif') center/cover no-repeat; overflow:hidden; }
+    #home::after { content:''; position:absolute; inset:0; background: linear-gradient(to bottom, rgba(0,0,0,0) 55%, rgba(5,6,8,.9) 100%); pointer-events:none; }
+    #home > * { position: relative; z-index: 2; }
+    .hero-eyebrow { color: rgba(255,255,255,.75); letter-spacing: .3em; font-size:.68rem; }
+    .hero-name { font-family:'Inter','Helvetica Neue',Helvetica,Arial,sans-serif; font-weight: 400; letter-spacing: -0.045em; line-height: .92; font-size: clamp(3.4rem, 9.5vw, 9rem); color: transparent; background: linear-gradient(100deg,#FFD9BE 0%,#FFF2DD 38%,rgba(255,255,255,.55) 70%,rgba(255,255,255,.35) 100%); -webkit-background-clip:text; background-clip:text; max-width: 9em; margin-bottom: 0; }
+    .hero-name em { font-style: normal; }
+    .hero-tagline { color: rgba(255,255,255,.88); font-size: 1.05rem; letter-spacing:.03em; max-width: 560px; line-height: 1.75; margin: 2rem 0 1.8rem; }
+    .hero-cta { background: none; color:#fff; padding: .5rem 0; border-bottom: 1px solid #fff; font-size:.72rem; letter-spacing:.28em; margin-bottom: 2.2rem; }
+    .hero-cta::after { content:'  \2192'; letter-spacing:0; }
+    .hero-cta:hover { background:none; color:#fff; transform:none; opacity:.8; }
+    .hero-tags { margin-bottom: 2.2rem; }
+    .hero-tag { background: rgba(255,255,255,.07); border-color: rgba(255,255,255,.25); color:#fff; border-radius: 100px; backdrop-filter: blur(8px); }
+    .hero-stats-grid { display:grid; grid-template-columns: repeat(4,1fr); border-top: 1px solid rgba(255,255,255,.22); margin: 0 0 0; }
+    .stats-marquee { overflow: hidden; border-top: 1px solid rgba(255,255,255,.22); }
+    .stats-marquee-track { display: flex; width: max-content; animation: statsMarquee 40s linear infinite; }
+    .stats-marquee-track:hover { animation-play-state: paused; }
+    .stats-marquee .hero-stat { flex: 0 0 auto; min-width: 230px; border-left: 1px solid rgba(255,255,255,.22); }
+    @keyframes statsMarquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+    @media (prefers-reduced-motion: reduce) { .stats-marquee { overflow-x: auto; } .stats-marquee-track { animation: none; } }
+    .hero-stat { text-align:center; padding: 1.6rem .6rem 2.2rem; }
+    .hero-stat + .hero-stat { border-left: 1px solid rgba(255,255,255,.22); }
+    .hero-stat .n { display:block; font-size: clamp(1.3rem,2.4vw,2.1rem); font-weight:300; color:#fff; letter-spacing:.02em; }
+    .hero-stat .l { display:block; margin-top:.9rem; font-size:.6rem; letter-spacing:.22em; text-transform:uppercase; color: rgba(255,255,255,.8); }
+    .hero-stats-band { background: transparent; border-color: var(--line); }
+    .stat-item { border-right-color: var(--line); }
+    .stat-num { color:#fff; font-weight:300; } .stat-label { color: var(--txt2); }
+    #testimonial { background: radial-gradient(ellipse at 15% 50%, rgba(255,106,43,.22), transparent 60%), radial-gradient(ellipse at 90% 40%, rgba(46,143,209,.25), transparent 60%), var(--ink); }
+    #testimonial::before { color:#fff; opacity:.07; }
+    .testimonial-quote { font-weight:300; color:#fff; }
+    .testimonial-quote em, .testimonial-cite, .testimonial-cite span { color: #FFB48A; }
+    .testimonial-cite { border-left-color: var(--ember); }
+    #clients { background: var(--ink); border-bottom: 1px solid var(--line); }
+    .clients-label { color: var(--txt2); }
+    .logo-track-wrapper::before { background: linear-gradient(to right, var(--ink), transparent); }
+    .logo-track-wrapper::after { background: linear-gradient(to left, var(--ink), transparent); }
+    .logo-item img { filter: brightness(0) invert(1); opacity:.7; }
+    #cases { background: transparent; }
+    .section-label { color: var(--ember); letter-spacing:.3em; }
+    .section-title, .subgroup-label { font-family:'Inter','Helvetica Neue',Helvetica,Arial,sans-serif; font-style:normal; font-weight:300; letter-spacing:-0.03em; color:#fff; }
+    .subgroup-label { font-size:1.1rem; letter-spacing:.2em; text-transform:uppercase; border-top-color: var(--line); color: var(--txt2); }
+    .divider { background: linear-gradient(90deg,var(--ember),var(--azure)); height:2px; }
+    .case-card { background: var(--glass); border: 1px solid var(--line); backdrop-filter: blur(14px); }
+    .block-dark, .block-light, .block-accent, .block-mint, .block-black { background: var(--glass); color:#fff; border: none; }
+    .block-accent { background: linear-gradient(120deg, rgba(255,106,43,.35), rgba(46,143,209,.28)); }
+    .block-black { background: rgba(0,0,0,.45); }
+    .card-block-title { font-weight: 400; letter-spacing:-.01em; }
+    .card-detail, .card-subheader, .card-diagram-wrap, .territory-grid-wrap, .hooks-example-wrap { background: transparent; }
+    .card-cols, .card-diagram-wrap, .territory-grid-wrap, .hooks-example-wrap, .card-img { border-color: var(--line); }
+    .card-col + .card-col { border-left-color: var(--line); }
+    .col-label, .outcome-num, .territory-name, .hooks-table th, .hooks-table td:first-child { color:#fff; }
+    .col-problem-text, .col-approach-list li, .hooks-table td, .territory-field-text, .card-subheader { color: var(--txt2); }
+    .hooks-table td:last-child, .outcome-sub, .card-diagram-caption, .territory-grid-label, .territory-field-label { color: rgba(244,239,234,.5); }
+    .col-problem-text { border-left-color: var(--line); }
+    .col-approach-list li::before { color: var(--ember); }
+    .hooks-table th, .hooks-table td { border-color: var(--line); }
+    .territory-card, .territory-card.accent { background: var(--glass); border-color: var(--line); }
+    .territory-card:hover { border-color:#fff; }
+    .show-more-toggle { background: rgba(255,255,255,.06); border-color: rgba(255,255,255,.3); color:#fff; }
+    .show-more-toggle:hover { background: rgba(255,255,255,.14); }
+    #contact { background: radial-gradient(ellipse at 100% 100%, rgba(46,143,209,.3), transparent 55%), radial-gradient(ellipse at 0% 100%, rgba(255,106,43,.25), transparent 55%), var(--ink); }
+    #contact .section-title, .contact-intro, .ci-detail a, .ci-detail p { color:#fff; }
+    .ci-icon { background: rgba(255,255,255,.1); border:1px solid var(--line); border-radius:50%; }
+    .ci-detail span, .ff label { color: var(--txt2); }
+    .ff input, .ff textarea { background: rgba(255,255,255,.06); border-color: var(--line); color:#fff; }
+    .ff input:focus, .ff textarea:focus { border-color:#fff; }
+    .btn-send { background:#fff; color:#000; border-radius:100px; }
+    .btn-send:hover { background: var(--ember); color:#fff; }
+    footer { background: var(--ink); border-top:1px solid var(--line); }
+    footer p, .footer-logo { color: var(--txt2); }
+    @media (max-width: 960px) { nav { padding: 1.2rem 1.6rem; } #home { padding: 7rem 1.6rem 0; } .stats-marquee .hero-stat { min-width: 170px; } }
+
+    /* ===== V3.1 ===== */
+    .hero-stat .n { font-weight: 700; }
+    .ai-accent { font-weight: 500; color:#fff; border-bottom: 1px solid rgba(255,255,255,.6); }
+    #cases { max-width: none; margin: 0; padding: 6rem 0; background: #05070c url('light-leak.jpg') center/cover no-repeat fixed; }
+    #cases > * { max-width: 980px; margin-left:auto; margin-right:auto; padding-left: 2rem; padding-right: 2rem; }
+    #cases .section-label { color:#fff; opacity:.85; }
+    #cases .cards-stack { max-width: 980px; padding: 0 2rem; }
+    .tabs { display:flex; gap: .4rem; margin: 0 auto 2.2rem; padding: .35rem; width: fit-content; max-width:100%; background: rgba(0,0,0,.35); border:1px solid rgba(255,255,255,.2); border-radius: 100px; backdrop-filter: blur(12px); }
+    .tab-btn { font: inherit; font-size:.72rem; letter-spacing:.18em; text-transform:uppercase; font-weight:500; color: rgba(255,255,255,.75); background:none; border:none; padding:.85rem 1.7rem; border-radius:100px; cursor:pointer; transition: background .25s,color .25s; }
+    .tab-btn:hover { color:#fff; }
+    .tab-btn.active { background:#fff; color:#000; }
+    .tab-panel { display:none; } .tab-panel.active { display:block; }
+    /* per-card colour */
+    .case-card { --bg:#0B2A4A; --fg:#fff; --fg2:rgba(255,255,255,.76); --fg3:rgba(255,255,255,.55); --ln:rgba(255,255,255,.18); --pt:#FF6A2B; background: var(--bg); color: var(--fg); border:none; backdrop-filter:none; box-shadow: 0 18px 50px rgba(0,0,0,.35); }
+    #tab-strategy .case-card:nth-of-type(2) { --bg:#F6E9DC; --fg:#1b1109; --fg2:rgba(27,17,9,.76); --fg3:rgba(27,17,9,.55); --ln:rgba(27,17,9,.16); --pt:#E5521A; }
+    #tab-strategy .case-card:nth-of-type(3) { --bg:#FF6A2B; --fg:#1b0a02; --fg2:rgba(27,10,2,.8); --fg3:rgba(27,10,2,.6); --ln:rgba(27,10,2,.22); --pt:#1b0a02; }
+    #tab-strategy .case-card:nth-of-type(4) { --bg:#9CCBEA; --fg:#06203a; --fg2:rgba(6,32,58,.78); --fg3:rgba(6,32,58,.58); --ln:rgba(6,32,58,.2); --pt:#06203a; }
+    #tab-ai .case-card:nth-of-type(1) { --bg:#07080B; }
+    #tab-ai .case-card:nth-of-type(2) { --bg:#B8341F; }
+    .case-card .block-dark, .case-card .block-light, .case-card .block-accent, .case-card .block-mint, .case-card .block-black { background:none; }
+    .block-dark, .block-light, .block-accent, .block-mint, .block-black { background: var(--bg); color: var(--fg); }
+    .card-block-title, .col-label, .outcome-num, .territory-name, .hooks-table th, .hooks-table td:first-child { color: var(--fg); }
+    .col-problem-text, .col-approach-list li, .hooks-table td, .territory-field-text, .card-subheader { color: var(--fg2); }
+    .hooks-table td:last-child, .outcome-sub, .territory-grid-label, .territory-field-label { color: var(--fg3); }
+    .card-cols, .territory-grid-wrap, .hooks-example-wrap, .card-col + .card-col, .hooks-table th, .hooks-table td, .col-problem-text { border-color: var(--ln); }
+    .col-approach-list li::before { color: var(--pt); }
+    .territory-card, .territory-card.accent { background: rgba(255,255,255,.12); border-color: var(--ln); }
+    .territory-card:hover { border-color: var(--fg); }
+    .show-more-toggle { background: transparent; border-color: var(--fg); color: var(--fg); }
+    .show-more-toggle:hover { background: var(--ln); }
+    .card-diagram-wrap { background: rgba(255,255,255,.95); }
+    .card-diagram-caption { color:#555; }
+    .territory-stage-pill[style*="#DCEB7D"] { background:#FF6A2B !important; color:#000 !important; }
+    .territory-stage-pill[style*="#EEF3E1"] { background:#9CCBEA !important; }
+    .territory-stage-pill[style*="#373634"] { background:#0B2A4A !important; }
+    .territory-stage-pill[style*="rgba(55,54,52,0.55)"] { background:#6E93B8 !important; color:#fff !important; }
+    .territory-stage-pill[style*="color:#DCEB7D"] { background:#000 !important; color:#FF6A2B !important; }
+    @media (max-width: 960px) { #cases > *, #cases .cards-stack { padding-left:1rem; padding-right:1rem; } #cases { background-attachment: scroll; } .tab-btn { padding:.8rem 1.1rem; font-size:.65rem; } }
+
+    /* ===== 20% opacity test ===== */
+    .hero-name { opacity: .8; }
+    .hero-stat .n { opacity: .8; }
+    #cases .section-title { opacity: .8; }
+    .case-card, .block-dark, .block-light, .block-accent, .block-mint, .block-black { background: color-mix(in srgb, var(--bg) 80%, transparent); }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="#home" class="nav-logo">Erin Floyd</a>
+    <ul class="nav-links">
+      <li><a href="#cases">Case Studies</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section id="home">
+    <h1 class="hero-name">Creative strategy for performance.</h1>
+    <p class="hero-tagline">I lead global content and paid social creative strategy, building the processes and AI-enabled systems that link performance insight to creative output, and scale what works across channels and markets.</p>
+    <div><a href="#cases" class="hero-cta">View Case Studies</a></div>
+    <div class="stats-marquee">
+      <div class="stats-marquee-track">
+      <div class="hero-stat"><span class="n">85</span><span class="l">Global markets</span></div>
+      <div class="hero-stat"><span class="n">2.4&times;</span><span class="l">ROAS vs. control</span></div>
+      <div class="hero-stat"><span class="n">10&times;</span><span class="l">Testing throughput</span></div>
+      <div class="hero-stat"><span class="n">+431%</span><span class="l">CRM engagement</span></div>
+      <div class="hero-stat"><span class="n">+300%</span><span class="l">Web traffic</span></div>
+      <div class="hero-stat"><span class="n">100%</span><span class="l">Sell-through on M&middot;A&middot;C campaigns</span></div>
+      <div class="hero-stat"><span class="n">+183%</span><span class="l">EMV over benchmark (8wk)</span></div>
+      <div class="hero-stat"><span class="n">+131%</span><span class="l">Sales uplift</span></div>
+      <div class="hero-stat"><span class="n">85</span><span class="l">Global markets</span></div>
+      <div class="hero-stat"><span class="n">2.4&times;</span><span class="l">ROAS vs. control</span></div>
+      <div class="hero-stat"><span class="n">10&times;</span><span class="l">Testing throughput</span></div>
+      <div class="hero-stat"><span class="n">+431%</span><span class="l">CRM engagement</span></div>
+      <div class="hero-stat"><span class="n">+300%</span><span class="l">Web traffic</span></div>
+      <div class="hero-stat"><span class="n">100%</span><span class="l">Sell-through on M&middot;A&middot;C campaigns</span></div>
+      <div class="hero-stat"><span class="n">+183%</span><span class="l">EMV over benchmark (8wk)</span></div>
+      <div class="hero-stat"><span class="n">+131%</span><span class="l">Sales uplift</span></div>
+      </div>
+    </div>
+  </section>
+
+  </div>
+
+  <!-- TESTIMONIAL -->
+  <section id="testimonial">
+    <div class="testimonial-inner reveal">
+      <blockquote class="testimonial-quote">
+        "The execution… is flawless, the ideation brilliant and the collaboration … one we will highlight to all regions going forward as our <em>gold standard</em>. We are so grateful for everything that you have done."
+      </blockquote>
+      <cite class="testimonial-cite">
+        SVP Global Marketing, MAC Cosmetics
+      </cite>
+    </div>
+  </section>
+
+  <!-- LOGOS -->
+  <div id="clients">
+    <p class="clients-label">I've Worked With</p>
+    <div class="logo-track-wrapper">
+      <div class="logo-track">
+        <div class="logo-item"><img src="image8.png" alt="Financial Times" /></div>
+        <div class="logo-item"><img src="image3.png" alt="M·A·C Cosmetics" /></div>
+        <div class="logo-item"><img src="image6.png" alt="Dazed Media" /></div>
+        <div class="logo-item"><img src="image11.png" alt="Harper's Bazaar" /></div>
+        <div class="logo-item"><img src="image13.png" alt="Numéro" /></div>
+        <div class="logo-item"><img src="image4.png" alt="AnOther Magazine" /></div>
+        <div class="logo-item"><img src="image5.png" alt="British Academy of Jewellery" /></div>
+        <div class="logo-item"><img src="image7.png" alt="Fashion Network" /></div>
+        <div class="logo-item"><img src="image9.gif" alt="Fucking Young!" /></div>
+        <div class="logo-item"><img src="image10.png" alt="Hachette" /></div>
+        <div class="logo-item"><img src="image12.png" alt="Edelmont Genève" /></div>
+        <div class="logo-item"><img src="image14.png" alt="Vice" /></div>
+        <div class="logo-item"><img src="image8.png" alt="Financial Times" /></div>
+        <div class="logo-item"><img src="image3.png" alt="M·A·C Cosmetics" /></div>
+        <div class="logo-item"><img src="image6.png" alt="Dazed Media" /></div>
+        <div class="logo-item"><img src="image11.png" alt="Harper's Bazaar" /></div>
+        <div class="logo-item"><img src="image13.png" alt="Numéro" /></div>
+        <div class="logo-item"><img src="image4.png" alt="AnOther Magazine" /></div>
+        <div class="logo-item"><img src="image5.png" alt="British Academy of Jewellery" /></div>
+        <div class="logo-item"><img src="image7.png" alt="Fashion Network" /></div>
+        <div class="logo-item"><img src="image9.gif" alt="Fucking Young!" /></div>
+        <div class="logo-item"><img src="image10.png" alt="Hachette" /></div>
+        <div class="logo-item"><img src="image12.png" alt="Edelmont Genève" /></div>
+        <div class="logo-item"><img src="image14.png" alt="Vice" /></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CASE STUDIES -->
+  <div id="cases">
+    <p class="section-label reveal">Selected Projects</p>
+    <h2 class="section-title reveal">Case Studies</h2>
+    <div class="divider reveal"></div>
+
+    <div class="cards-stack">
+
+    <div class="tabs reveal" role="tablist">
+      <button class="tab-btn active" role="tab" aria-selected="true" data-tab="tab-strategy" onclick="switchTab(this)">Creative Strategy</button>
+      <button class="tab-btn" role="tab" aria-selected="false" data-tab="tab-ai" onclick="switchTab(this)">AI Systems Design</button>
+      <button class="tab-btn" role="tab" aria-selected="false" data-tab="tab-content" onclick="switchTab(this)">Global Content &amp; Growth</button>
+    </div>
+    <div class="tab-panel active" id="tab-strategy">
+
+    <!-- LAMISIL TERRITORY MATRIX -->
+    <div class="case-card reveal block-dark">
+      <div class="card-block-header" onclick="toggleCard(this)">
+        <div class="card-block-left">
+          <p class="card-block-eyebrow">Karo Health · Lamisil</p>
+          <h3 class="card-block-title">Unlocking Full-Funnel Drivers and New Strategic Concepts</h3>
+        </div>
+        <div class="card-block-right">
+          <span class="card-block-toggle">+</span>
+        </div>
+      </div>
+      <div class="card-detail">
+      <div class="card-cols">
+        <div class="card-col">
+          <p class="col-label">Challenge</p>
+          <p class="col-problem-text">Lamisil's positioning and communications skewed toward an older, medicalised audience. Broader brand strategy had identified an opportunity to reposition toward a younger, more active 18–35 audience, a group the category's existing tone actively alienated.</p>
+        </div>
+        <div class="card-col">
+          <p class="col-label">What I Did</p>
+          <ul class="col-approach-list">
+            <li>I ran consumer and category research to understand what brought people into the category and the emotional barriers preventing treatment: younger consumers associated fungal infections with embarrassment, disrupted sport/social life, and a mismatch with their self-image as healthy and active</li>
+            <li>I identified the real entry points into the category for this audience: returning to sport, gym participation, summer travel, festivals. I fed that language directly into hooks and objection-handling</li>
+            <li>I replaced clinical framing with creative territories built around positive, active culture and sport</li>
+            <li>I mapped every territory against audience awareness stage (symptom-unaware through high-intent product comparison), briefed creative per stage, and used the same map to audit coverage and catch untested audience-and-stage combinations</li>
+            <li>I structured testing around specific, isolated hypotheses (e.g. active-lifestyle framing vs. clinical messaging for this audience) and read signal by convergence, counting an angle as proven only once it worked across several distinct executions</li>
+          </ul>
+          <button class="show-more-toggle" style="margin: 1.1rem 0 0; padding: 0.45rem 1.1rem; font-size: 0.7rem;" onclick="toggleCollapse(this, 'lamisil-matrix')">View Territory × Awareness-Stage Matrix <span class="chevron">▾</span></button>
+          <button class="show-more-toggle" data-expanded-label="Hide Sample Hooks " style="margin: 0.6rem 0 0; padding: 0.45rem 1.1rem; font-size: 0.7rem;" onclick="toggleCollapse(this, 'lamisil-hooks')">Sample Hooks: Return to Sport Territory <span class="chevron">▾</span></button>
+        </div>
+        <div class="card-col">
+          <p class="col-label">Results</p>
+          <div class="col-outcomes-list">
+            <div class="outcome-row"><span class="outcome-num">14.25%</span><span class="outcome-sub">ThruPlay VTR vs. 12% plan (+18.7%)</span></div>
+            <div class="outcome-row"><span class="outcome-num">451,923</span><span class="outcome-sub">ThruPlays delivered, 3% above plan</span></div>
+            <div class="outcome-row"><span class="outcome-num">New angle</span><span class="outcome-sub">"footcare as aspirational" identified, opening a new positioning route with professional endorsement and human reassurance as a lower-funnel conversion lever</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="collapsible-cards" id="lamisil-matrix">
+      <div class="territory-grid-wrap">
+        <p class="col-problem-text" style="margin-bottom: 1.2rem;">Six creative territories mapped against five awareness stages: a structured matrix used to brief per stage, audit coverage, and catch untested audience and stage combinations. The standout result was a net-new premise: footcare as aspirational.</p>
+        <p class="territory-grid-label">Territory × Awareness-Stage Matrix</p>
+        <div class="territory-grid">
+          <div class="territory-card">
+            <h4 class="territory-name">Return to Sport</h4>
+            <span class="territory-stage-pill" style="background:#000000; color:#FFFFFF;">Unaware → Problem-Aware</span>
+            <div class="territory-field"><p class="territory-field-label">Entry Point</p><p class="territory-field-text">Coming back to sport after a break</p></div>
+            <div class="territory-field"><p class="territory-field-label">Strategic Role</p><p class="territory-field-text">Normalise symptom recognition through a warm, reassuring tone</p></div>
+          </div>
+          <div class="territory-card">
+            <h4 class="territory-name">Gym &amp; Training Culture</h4>
+            <span class="territory-stage-pill" style="background:#373634; color:#FFFFFF;">Problem → Solution-Aware</span>
+            <div class="territory-field"><p class="territory-field-label">Entry Point</p><p class="territory-field-text">Regular gym participation</p></div>
+            <div class="territory-field"><p class="territory-field-label">Strategic Role</p><p class="territory-field-text">Test active-lifestyle framing vs. clinical messaging for this audience</p></div>
+          </div>
+          <div class="territory-card">
+            <h4 class="territory-name">Summer Travel</h4>
+            <span class="territory-stage-pill" style="background:rgba(55,54,52,0.55); color:#000000;">Solution-Aware</span>
+            <div class="territory-field"><p class="territory-field-label">Entry Point</p><p class="territory-field-text">Holiday and travel season</p></div>
+            <div class="territory-field"><p class="territory-field-label">Strategic Role</p><p class="territory-field-text">Catch untested audience × stage combinations via coverage audit</p></div>
+          </div>
+          <div class="territory-card">
+            <h4 class="territory-name">Festival &amp; Social Season</h4>
+            <span class="territory-stage-pill" style="background:#EEF3E1; color:#000000;">Solution → Product-Aware</span>
+            <div class="territory-field"><p class="territory-field-label">Entry Point</p><p class="territory-field-text">Festivals and social occasions</p></div>
+            <div class="territory-field"><p class="territory-field-label">Strategic Role</p><p class="territory-field-text">Connect treatment to protecting active social life and health</p></div>
+          </div>
+          <div class="territory-card">
+            <h4 class="territory-name">Mechanism &amp; Proof</h4>
+            <span class="territory-stage-pill" style="background:#DCEB7D; color:#000000;">Product-Aware</span>
+            <div class="territory-field"><p class="territory-field-label">Entry Point</p><p class="territory-field-text">Comparison-stage shoppers</p></div>
+            <div class="territory-field"><p class="territory-field-label">Strategic Role</p><p class="territory-field-text">Mechanism-of-action and proof-point content, lower-funnel</p></div>
+          </div>
+          <div class="territory-card accent">
+            <h4 class="territory-name">Footcare as Aspirational</h4>
+            <span class="territory-stage-pill" style="background:#000000; color:#DCEB7D;">★ Emergent Angle</span>
+            <div class="territory-field"><p class="territory-field-label">Entry Point</p><p class="territory-field-text">Cross-cutting: the standout discovery</p></div>
+            <div class="territory-field"><p class="territory-field-label">Strategic Role</p><p class="territory-field-text">The unexpected new positioning route: professional endorsement + human reassurance as the conversion lever</p></div>
+          </div>
+        </div>
+      </div>
+      </div>
+      <div class="collapsible-cards" id="lamisil-hooks">
+      <div class="hooks-example-wrap">
+        <div class="hooks-table-wrap">
+          <table class="hooks-table">
+            <thead>
+              <tr><th>Hook Type</th><th>Example Hook</th><th>What It's Testing</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Promise Hook</td>
+                <td>"By the end of this video, you'll know why athlete's foot is so common when people return to sport after a break."</td>
+                <td>Does explicit educational value outperform emotional identification?</td>
+              </tr>
+              <tr>
+                <td>Spectacle Hook</td>
+                <td>"Three weeks back in the gym and this was the last thing I expected to happen to my feet." <em>(showing sock removal or post-workout scene)</em></td>
+                <td>Does lived experience and immediacy outperform explanation?</td>
+              </tr>
+              <tr>
+                <td>Question Hook</td>
+                <td>"Why do so many people get athlete's foot when they start exercising again?"</td>
+                <td>Does curiosity around the phenomenon outperform advice framing?</td>
+              </tr>
+              <tr>
+                <td>Contradiction Hook</td>
+                <td>"Starting exercise again can actually increase your chances of getting athlete's foot."</td>
+                <td>Does challenging assumptions increase retention and engagement?</td>
+              </tr>
+              <tr>
+                <td>Stakes Hook</td>
+                <td>"You've finally got your training routine back: the last thing you want is something that keeps you out of the gym again."</td>
+                <td>Does protecting identity and momentum outperform symptom framing?</td>
+              </tr>
+              <tr>
+                <td>Curiosity Gap Hook</td>
+                <td>"There's one reason athlete's foot is so common when people come back to sport, and most people never realise it."</td>
+                <td>Does withholding the explanation improve retention?</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      </div>
+      </div>
+    </div>
+
+    <!-- CCS FOOT CARE -->
+    <div class="case-card reveal block-mint">
+      <div class="card-block-header" onclick="toggleCard(this)">
+        <div class="card-block-left">
+          <p class="card-block-eyebrow">Karo Health · CCS Foot Care</p>
+          <h3 class="card-block-title">Cutting Acquisition Cost on a Plateaued Account: 2.4× ROAS vs. Control</h3>
+        </div>
+        <div class="card-block-right">
+          <span class="card-block-toggle">+</span>
+        </div>
+      </div>
+      <div class="card-detail">
+      <div class="card-cols">
+        <div class="card-col">
+          <p class="col-label">Challenge</p>
+          <p class="col-problem-text">A profitable Meta programme had plateaued after the media team had optimised targeting and bidding. Creative performance was the remaining growth constraint.</p>
+        </div>
+        <div class="card-col">
+          <p class="col-label">What I Did</p>
+          <ul class="col-approach-list">
+            <li>I reviewed the account and identified creative as the primary growth constraint</li>
+            <li>I developed an audience-led testing framework using consumer research to define each hypothesis</li>
+            <li>I introduced a structured UGC format and rewrote late-funnel messaging around documented consumer pain points</li>
+          </ul>
+        </div>
+        <div class="card-col">
+          <p class="col-label">Results</p>
+          <div class="col-outcomes-list">
+            <div class="outcome-row"><span class="outcome-num">+21%</span><span class="outcome-sub">hook retention</span></div>
+            <div class="outcome-row"><span class="outcome-num">+0.9pp</span><span class="outcome-sub">CTR</span></div>
+            <div class="outcome-row"><span class="outcome-num">2.4×</span><span class="outcome-sub">ROAS vs. control</span></div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+
+    <!-- MAC STUDIO RADIANCE MODULAR TESTING -->
+    <div class="case-card reveal block-accent">
+      <div class="card-block-header" onclick="toggleCard(this)">
+        <div class="card-block-left">
+          <p class="card-block-eyebrow">MAC Cosmetics</p>
+          <h3 class="card-block-title">Beating Target by 31% and Driving 25,000 TikTok Leads</h3>
+        </div>
+        <div class="card-block-right">
+          <span class="card-block-toggle">+</span>
+        </div>
+      </div>
+      <div class="card-detail">
+      <div class="card-cols">
+        <div class="card-col">
+          <p class="col-label">Challenge</p>
+          <p class="col-problem-text">A global product launch required paid creative across Meta and TikTok. The team needed a testing framework that could isolate the creative variables affecting performance.</p>
+        </div>
+        <div class="card-col">
+          <p class="col-label">What I Did</p>
+          <ul class="col-approach-list">
+            <li>I built audience personas from CRM data, sales by age group, reviews, social listening and customer studies</li>
+            <li>I wrote distinct creative hypotheses for each segment and designed a modular shoot covering hooks, opening sections, model demographics and product claims</li>
+            <li>I tested each variable independently across Meta and TikTok to identify the decisions that moved performance by segment</li>
+            <li>I converted the shoot structure into a repeatable framework; subsequent campaigns added new evidence to the testing library</li>
+          </ul>
+          <button class="show-more-toggle" style="margin: 1.1rem 0 0; padding: 0.45rem 1.1rem; font-size: 0.7rem;" onclick="toggleCollapse(this, 'mac-studio-matrix')">View Modular Testing Matrix <span class="chevron">▾</span></button>
+        </div>
+        <div class="card-col">
+          <p class="col-label">Results</p>
+          <div class="col-outcomes-list">
+            <div class="outcome-row"><span class="outcome-num">Product-open hook</span><span class="outcome-sub">confirmed strongest format across segments</span></div>
+            <div class="outcome-row"><span class="outcome-num">+31%</span><span class="outcome-sub">Meta thruplays above target</span></div>
+            <div class="outcome-row"><span class="outcome-num">25,000</span><span class="outcome-sub">TikTok leads generated</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="collapsible-cards" id="mac-studio-matrix">
+      <div class="card-diagram-wrap">
+        <svg viewBox="0 0 1024 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;min-width:760px;" role="img" aria-label="Modular testing matrix: one concept, an aggregated research layer, four persona segments each with their own micropersonas, and a hook and claim test per micropersona.">
+            <defs><marker id="srArrow2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#0B2A4A" /></marker></defs>
+            <text x="65" y="50" font-family="DM Sans, sans-serif" font-size="9" font-weight="500" letter-spacing="1.5" text-anchor="end" fill="#888888">CONCEPT</text>
+            <text x="65" y="119" font-family="DM Sans, sans-serif" font-size="9" font-weight="500" letter-spacing="1.5" text-anchor="end" fill="#888888">RESEARCH</text>
+            <text x="65" y="187" font-family="DM Sans, sans-serif" font-size="9" font-weight="500" letter-spacing="1.5" text-anchor="end" fill="#888888">PERSONA</text>
+            <text x="65" y="256" font-family="DM Sans, sans-serif" font-size="9" font-weight="500" letter-spacing="1.5" text-anchor="end" fill="#888888">MICROPERSONA</text>
+            <text x="65" y="324" font-family="DM Sans, sans-serif" font-size="9" font-weight="500" letter-spacing="1.5" text-anchor="end" fill="#888888">HOOK</text>
+            <path d="M542.0,70 L542.0,94" stroke="#0B2A4A" stroke-width="1.5" fill="none" marker-end="url(#srArrow2)" />
+            <path d="M542.0,138 L542.0,144" stroke="#0B2A4A" stroke-width="1.5" fill="none" />
+            <path d="M207.0,144 L810.0,144" stroke="#0B2A4A" stroke-width="1.5" fill="none" />
+            <path d="M207.0,144 L207.0,162" stroke="#0B2A4A" stroke-width="1.5" fill="none" marker-end="url(#srArrow2)" />
+            <path d="M408.0,144 L408.0,162" stroke="#0B2A4A" stroke-width="1.5" fill="none" marker-end="url(#srArrow2)" />
+            <path d="M542.0,144 L542.0,162" stroke="#0B2A4A" stroke-width="1.5" fill="none" marker-end="url(#srArrow2)" />
+            <path d="M810.0,144 L810.0,162" stroke="#0B2A4A" stroke-width="1.5" fill="none" marker-end="url(#srArrow2)" />
+            <path d="M207.0,206 L207.0,212" stroke="#0B2A4A" stroke-width="1.5" fill="none" />
+            <path d="M140.0,212 L274.0,212" stroke="#0B2A4A" stroke-width="1.5" fill="none" />
+            <path d="M140.0,212 L140.0,228" stroke="#0B2A4A" stroke-width="1.5" fill="none" marker-end="url(#srArrow2)" />
+            <path d="M274.0,212 L274.0,228" stroke="#0B2A4A" stroke-width="1.5" fill="none" marker-end="url(#srArrow2)" />
+            <path d="M408.0,206 L408.0,228" stroke="#0B2A4A" stroke-width="1.5" fill="none" marker-end="url(#srArrow2)" />
+            <path d="M542.0,206 L542.0,228" stroke="#0B2A4A" stroke-width="1.5" fill="none" marker-end="url(#srArrow2)" />
+            <path d="M810.0,206 L810.0,212" stroke="#0B2A4A" stroke-width="1.5" fill="none" />
+            <path d="M676.0,212 L944.0,212" stroke="#0B2A4A" stroke-width="1.5" fill="none" />
+            <path d="M676.0,212 L676.0,228" stroke="#0B2A4A" stroke-width="1.5" fill="none" marker-end="url(#srArrow2)" />
+            <path d="M810.0,212 L810.0,228" stroke="#0B2A4A" stroke-width="1.5" fill="none" marker-end="url(#srArrow2)" />
+            <path d="M944.0,212 L944.0,228" stroke="#0B2A4A" stroke-width="1.5" fill="none" marker-end="url(#srArrow2)" />
+            <path d="M140.0,278 L140.0,302" stroke="#0B2A4A" stroke-width="1.5" fill="none" marker-end="url(#srArrow2)" />
+            <path d="M274.0,278 L274.0,302" stroke="#0B2A4A" stroke-width="1.5" fill="none" marker-end="url(#srArrow2)" />
+            <path d="M408.0,278 L408.0,302" stroke="#0B2A4A" stroke-width="1.5" fill="none" marker-end="url(#srArrow2)" />
+            <path d="M542.0,278 L542.0,302" stroke="#0B2A4A" stroke-width="1.5" fill="none" marker-end="url(#srArrow2)" />
+            <path d="M676.0,278 L676.0,302" stroke="#0B2A4A" stroke-width="1.5" fill="none" marker-end="url(#srArrow2)" />
+            <path d="M810.0,278 L810.0,302" stroke="#0B2A4A" stroke-width="1.5" fill="none" marker-end="url(#srArrow2)" />
+            <path d="M944.0,278 L944.0,302" stroke="#0B2A4A" stroke-width="1.5" fill="none" marker-end="url(#srArrow2)" />
+            <rect x="422.0" y="20" width="240" height="50" rx="8" fill="#000000" stroke="rgba(11,42,74,0.28)" stroke-width="1" />
+            <text x="542.0" y="42" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="15" font-weight="700" fill="#FFFFFF">Studio Radiance Foundation</text>
+            <text x="542.0" y="58" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="9.5" letter-spacing="0.5" fill="rgba(255,255,255,0.75)">MODULAR CONCEPT TEST</text>
+            <rect x="80" y="92" width="924" height="46" rx="8" fill="#0B2A4A" stroke="rgba(11,42,74,0.28)" stroke-width="1" />
+            <text x="542.0" y="111" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="9" font-weight="600" letter-spacing="1" fill="rgba(255,255,255,0.8)">AGGREGATED RESEARCH SOURCES</text>
+            <text x="542.0" y="127" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="10.5" font-weight="500" fill="#FFFFFF">CRM Data · Sales by Age Group · Consumer Reviews · Social Listening · Customer Insight Studies</text>
+            <rect x="80" y="160" width="254" height="46" rx="8" fill="#0B2A4A" fill-opacity="0.55" stroke="rgba(11,42,74,0.28)" stroke-width="1" />
+            <text x="207.0" y="189" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="13" font-weight="700" fill="#000000">Glow Minimalist</text>
+            <rect x="348" y="160" width="120" height="46" rx="8" fill="#0B2A4A" fill-opacity="0.55" stroke="rgba(11,42,74,0.28)" stroke-width="1" />
+            <text x="408.0" y="181" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="12" font-weight="700" fill="#000000">Texture</text>
+            <text x="408.0" y="196" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="12" font-weight="700" fill="#000000">Perfectionist</text>
+            <rect x="482" y="160" width="120" height="46" rx="8" fill="#0B2A4A" fill-opacity="0.55" stroke="rgba(11,42,74,0.28)" stroke-width="1" />
+            <text x="542.0" y="181" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="12" font-weight="700" fill="#000000">Ingredient</text>
+            <text x="542.0" y="196" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="12" font-weight="700" fill="#000000">Researcher</text>
+            <rect x="616" y="160" width="388" height="46" rx="8" fill="#0B2A4A" fill-opacity="0.55" stroke="rgba(11,42,74,0.28)" stroke-width="1" />
+            <text x="810.0" y="189" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="13" font-weight="700" fill="#000000">Second-Skin Seeker</text>
+            <rect x="80" y="226" width="120" height="52" rx="8" fill="#FF6A2B" stroke="rgba(11,42,74,0.28)" stroke-width="1" />
+            <text x="140.0" y="250" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="10.5" font-weight="600" fill="#000000">No-Makeup</text>
+            <text x="140.0" y="264" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="10.5" font-weight="600" fill="#000000">Makeup</text>
+            <rect x="214" y="226" width="120" height="52" rx="8" fill="#FF6A2B" stroke="rgba(11,42,74,0.28)" stroke-width="1" />
+            <text x="274.0" y="250" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="10.5" font-weight="600" fill="#000000">Glass</text>
+            <text x="274.0" y="264" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="10.5" font-weight="600" fill="#000000">Skin Glow</text>
+            <rect x="348" y="226" width="120" height="52" rx="8" fill="#FF6A2B" stroke="rgba(11,42,74,0.28)" stroke-width="1" />
+            <text x="408.0" y="250" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="10.5" font-weight="600" fill="#000000">Pore-Blur</text>
+            <text x="408.0" y="264" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="10.5" font-weight="600" fill="#000000">Finish</text>
+            <rect x="482" y="226" width="120" height="52" rx="8" fill="#FF6A2B" stroke="rgba(11,42,74,0.28)" stroke-width="1" />
+            <text x="542.0" y="250" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="10.5" font-weight="600" fill="#000000">Active</text>
+            <text x="542.0" y="264" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="10.5" font-weight="600" fill="#000000">Ingredient Proof</text>
+            <rect x="616" y="226" width="120" height="52" rx="8" fill="#FF6A2B" stroke="rgba(11,42,74,0.28)" stroke-width="1" />
+            <text x="676.0" y="250" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="10.5" font-weight="600" fill="#000000">Undetectable</text>
+            <text x="676.0" y="264" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="10.5" font-weight="600" fill="#000000">Coverage</text>
+            <rect x="750" y="226" width="120" height="52" rx="8" fill="#FF6A2B" stroke="rgba(11,42,74,0.28)" stroke-width="1" />
+            <text x="810.0" y="250" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="10.5" font-weight="600" fill="#000000">All-Day</text>
+            <text x="810.0" y="264" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="10.5" font-weight="600" fill="#000000">Confidence</text>
+            <rect x="884" y="226" width="120" height="52" rx="8" fill="#FF6A2B" stroke="rgba(11,42,74,0.28)" stroke-width="1" />
+            <text x="944.0" y="257" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="11.5" font-weight="600" fill="#000000">Anti-Ageing</text>
+            <rect x="80" y="300" width="120" height="40" rx="8" fill="#CFE5F5" stroke="rgba(11,42,74,0.45)" stroke-width="1" />
+            <text x="140.0" y="317" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="9.5" font-weight="500" fill="#000000">Hook &amp;</text>
+            <text x="140.0" y="330" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="9.5" font-weight="500" fill="#000000">Claim Test</text>
+            <rect x="214" y="300" width="120" height="40" rx="8" fill="#CFE5F5" stroke="rgba(11,42,74,0.45)" stroke-width="1" />
+            <text x="274.0" y="317" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="9.5" font-weight="500" fill="#000000">Hook &amp;</text>
+            <text x="274.0" y="330" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="9.5" font-weight="500" fill="#000000">Claim Test</text>
+            <rect x="348" y="300" width="120" height="40" rx="8" fill="#CFE5F5" stroke="rgba(11,42,74,0.45)" stroke-width="1" />
+            <text x="408.0" y="317" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="9.5" font-weight="500" fill="#000000">Hook &amp;</text>
+            <text x="408.0" y="330" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="9.5" font-weight="500" fill="#000000">Claim Test</text>
+            <rect x="482" y="300" width="120" height="40" rx="8" fill="#CFE5F5" stroke="rgba(11,42,74,0.45)" stroke-width="1" />
+            <text x="542.0" y="317" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="9.5" font-weight="500" fill="#000000">Hook &amp;</text>
+            <text x="542.0" y="330" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="9.5" font-weight="500" fill="#000000">Claim Test</text>
+            <rect x="616" y="300" width="120" height="40" rx="8" fill="#CFE5F5" stroke="rgba(11,42,74,0.45)" stroke-width="1" />
+            <text x="676.0" y="317" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="9.5" font-weight="500" fill="#000000">Hook &amp;</text>
+            <text x="676.0" y="330" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="9.5" font-weight="500" fill="#000000">Claim Test</text>
+            <rect x="750" y="300" width="120" height="40" rx="8" fill="#CFE5F5" stroke="rgba(11,42,74,0.45)" stroke-width="1" />
+            <text x="810.0" y="317" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="9.5" font-weight="500" fill="#000000">Hook &amp;</text>
+            <text x="810.0" y="330" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="9.5" font-weight="500" fill="#000000">Claim Test</text>
+            <rect x="884" y="300" width="120" height="40" rx="8" fill="#CFE5F5" stroke="rgba(11,42,74,0.45)" stroke-width="1" />
+            <text x="944.0" y="317" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="9.5" font-weight="500" fill="#000000">Hook &amp;</text>
+            <text x="944.0" y="330" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="9.5" font-weight="500" fill="#000000">Claim Test</text>
+        </svg>
+        <p class="card-diagram-caption">Illustrative view of the modular testing matrix: personas, micropersonas and research sources are real; hook/claim content is simplified for clarity.</p>
+      </div>
+      </div>
+      </div>
+    </div>
+
+    <!-- MAC UGC SYSTEM -->
+    <div class="case-card reveal block-light">
+      <div class="card-block-header" onclick="toggleCard(this)">
+        <div class="card-block-left">
+          <p class="card-block-eyebrow">MAC Cosmetics</p>
+          <h3 class="card-block-title">10× More Concepts Into Test: An Organic-to-Paid Pipeline Built on Nano-Creators</h3>
+        </div>
+        <div class="card-block-right">
+          <span class="card-block-toggle">+</span>
+        </div>
+      </div>
+      <div class="card-detail">
+      <div class="card-cols">
+        <div class="card-col">
+          <p class="col-label">Challenge</p>
+          <p class="col-problem-text">Contracted creators were slow and expensive: long lead times, high day rates, and too few assets to run structured tests. Trend windows were closing before content arrived.</p>
+        </div>
+        <div class="card-col">
+          <p class="col-label">What I Did</p>
+          <ul class="col-approach-list">
+            <li>I analysed the creator landscape and identified internal nano-creators as the strongest option for cost, speed and platform-native execution</li>
+            <li>I built the creator network and a rapid briefing process for reactive content and structured tests of hooks, openings and message angles</li>
+            <li>I established an organic performance benchmark from existing data and routed qualifying assets into paid amplification</li>
+          </ul>
+        </div>
+        <div class="card-col">
+          <p class="col-label">Results</p>
+          <div class="col-outcomes-list">
+            <div class="outcome-row"><span class="outcome-num">10×</span><span class="outcome-sub">testing throughput: distinct hooks, openings and message angles into structured tests each month</span></div>
+            <div class="outcome-row"><span class="outcome-num">+28%</span><span class="outcome-sub">organic engagement rate</span></div>
+            <div class="outcome-row"><span class="outcome-num">~30%</span><span class="outcome-sub">of assets beat the paid benchmark and earned media spend. Assets qualified strictly on performance data</span></div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+
+    </div>
+    <div class="tab-panel" id="tab-ai">
+
+    <!-- CER PLATFORM -->
+    <div class="case-card reveal block-black">
+      <div class="card-block-header" onclick="toggleCard(this)">
+        <div class="card-block-left">
+          <p class="card-block-eyebrow">AI Platform Design</p>
+          <h3 class="card-block-title">Built An AI Creative Effectiveness Platform</h3>
+        </div>
+        <div class="card-block-right">
+          <a href="https://erinrfloyd.github.io/cerlivedemo/" target="_blank" class="card-block-demo" onclick="event.stopPropagation()">View live demo →</a>
+          <span class="card-block-toggle">+</span>
+        </div>
+      </div>
+      <div class="card-detail">
+      <p class="card-subheader">Consumer intelligence engine combining review mining, voice-of-customer analysis, competitor surveillance, market trend monitoring, audience segmentation, purchase journey modelling and evidence-quality scoring to identify commercially valuable creative opportunities.</p>
+      <div class="card-img card-img-plain" style="background-image:url('cer-platform-screenshot.png'); background-size: cover; background-position: left top; height: 280px;"></div>
+      <div class="card-cols">
+        <div class="card-col">
+          <p class="col-label">Challenge</p>
+          <p class="col-problem-text">Creative insights were fragmented across agencies, brands and markets, making cross-portfolio learning impossible. Teams lacked a shared evidence base for creative decisions, and successful approaches could not be systematically identified, transferred or scaled.</p>
+        </div>
+        <div class="card-col">
+          <p class="col-label">What I Did</p>
+          <ul class="col-approach-list">
+            <li>Established the organisation's first shared creative evidence base across brands, markets and agency partners</li>
+            <li>Built a creative intelligence capability that transformed isolated campaign results into a compounding organisational knowledge asset</li>
+            <li>Developed an AI-enabled decision-support system linking consumer insight, creative execution, media performance and commercial outcomes</li>
+            <li>Embedded human strategic oversight into the process; AI accelerated decision-making under human judgement and accountability</li>
+          </ul>
+          <button class="show-more-toggle" style="margin: 1.1rem 0 0; padding: 0.45rem 1.1rem; font-size: 0.7rem;" onclick="toggleCollapse(this, 'cer-capabilities')">See full system capabilities <span class="chevron">▾</span></button>
+          <div class="collapsible-cards" id="cer-capabilities">
+            <ul class="col-approach-list" style="margin-top: 0.9rem;">
+              <li>Synthesises consumer reviews, social conversations, search behaviour, competitor investment patterns and market trends to identify high-potential motivations, barriers, category entry points and messaging opportunities</li>
+              <li>Assigns confidence scores to evidence sources and distinguishes validated findings from directional signals, improving decision quality in low-data environments</li>
+              <li>Analyses paid social creative at scale across hooks, messaging territories, awareness stages, production approaches and creative structures using text and visual analysis</li>
+              <li>Maps creative performance against customer journey economics, identifying acquisition products, LTV anchors, trade-up pathways and discount dependency risks</li>
+              <li>Identifies whitespace opportunities through competitive intelligence and creative coverage analysis across brands, categories and markets</li>
+              <li>Generates evidence-backed creative hypotheses, testing roadmaps, production briefs and UGC concepts with transparent confidence levels and source attribution</li>
+              <li>Distinguishes current and target audiences, preventing optimisation towards incumbent customers when growth depends on audience expansion</li>
+              <li>Separates performance-confirmed conclusions from inferential signals, improving governance around investment decisions and forecasting</li>
+            </ul>
+          </div>
+        </div>
+        <div class="card-col">
+          <p class="col-label">Results</p>
+          <div class="col-outcomes-list">
+            <div class="outcome-row"><span class="outcome-num">2 brands</span><span class="outcome-sub">onboarded, scaling to 7 across the portfolio</span></div>
+            <div class="outcome-row"><span class="outcome-num">8 weeks</span><span class="outcome-sub">of briefing time saved each year</span></div>
+            <div class="outcome-row"><span class="outcome-num">First</span><span class="outcome-sub">systematic, evidence-led briefing process across the brand portfolio</span></div>
+            <div class="outcome-row"><span class="outcome-num">Searchable</span><span class="outcome-sub">learning repository: every result logged with the hypothesis behind it, so evidence compounds and stays with the team</span></div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+
+    <!-- PRODUCTION ENGINE -->
+    <div class="case-card reveal block-dark">
+      <div class="card-block-header" onclick="toggleCard(this)">
+        <div class="card-block-left">
+          <p class="card-block-eyebrow">AI Preproduction Suite</p>
+          <h3 class="card-block-title">Cutting Production Planning Time by 95% with Automation</h3>
+        </div>
+        <div class="card-block-right">
+          <a href="https://erinrfloyd.github.io/campaignlivedemo/" target="_blank" class="card-block-demo" onclick="event.stopPropagation()">View live demo →</a>
+          <span class="card-block-toggle">+</span>
+        </div>
+      </div>
+      <div class="card-detail">
+      <div class="card-cols">
+        <div class="card-col">
+          <p class="col-label">Challenge</p>
+          <p class="col-problem-text">Budget checks, coverage reviews and production scheduling took several days per content cycle. The workload limited how many distinct concepts a lean creative team could get into production each month.</p>
+        </div>
+        <div class="card-col">
+          <p class="col-label">What I Did</p>
+          <ul class="col-approach-list">
+            <li>I built a feasibility engine that checks a concept against budget, maximises planned output per production cycle, and flags content gaps and risk before a brief is approved</li>
+            <li>I built an automated tool that converts an approved brief into a complete, multi-format production schedule in under an hour</li>
+            <li>I built in early checks for missing content, footage and coverage so gaps surface during planning, before production starts</li>
+          </ul>
+        </div>
+        <div class="card-col">
+          <p class="col-label">Results</p>
+          <div class="col-outcomes-list">
+            <div class="outcome-row"><span class="outcome-num">4d → 2h</span><span class="outcome-sub">planning time per production cycle</span></div>
+            <div class="outcome-row"><span class="outcome-num">&lt;1hr</span><span class="outcome-sub">full production schedule generation</span></div>
+            <div class="outcome-row"><span class="outcome-num">360 hours</span><span class="outcome-sub">recoverable each year across 3 people and 4 concurrent workstreams</span></div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+
+    </div>
+    <div class="tab-panel" id="tab-content">
+
+    <div class="case-card reveal block-dark">
+      <div class="card-block-header" onclick="toggleCard(this)">
+        <div class="card-block-left">
+          <p class="card-block-eyebrow">Karo</p>
+          <h3 class="card-block-title">One Content System Across 7 Brands and 85 Markets</h3>
+        </div>
+        <div class="card-block-right">
+          <span class="card-block-toggle">+</span>
+        </div>
+      </div>
+      <div class="card-detail">
+      <div class="card-cols">
+        <div class="card-col">
+          <p class="col-label">Challenge</p>
+          <p class="col-problem-text">Seven skin health, dental and consumer brands, sold across 85 markets, needed consistent and testable content across paid social, ecommerce, retail, website and landing pages, in multiple languages.</p>
+        </div>
+        <div class="card-col">
+          <p class="col-label">What I Did</p>
+          <ul class="col-approach-list">
+            <li>Led global content and creative strategy across 7 skin health, dental and consumer brands, including E45, Flux and iWhite</li>
+            <li>Established global briefing frameworks, UGC playbooks and creator guidelines, adopted across international markets and languages</li>
+            <li>Set the full-funnel content framework (hooks, scripts, copy and creative briefs) across paid social, ecommerce, retail and digital touchpoints, including website and landing pages</li>
+            <li>Directed agencies and production partners across shoot programmes and content production, from brief through creative review to final assets</li>
+            <li>Designed production planning and scheduling workflows across brands in project management tools; an AI preproduction system cut planning from 4 days to under 2 hours</li>
+          </ul>
+        </div>
+        <div class="card-col">
+          <p class="col-label">Results</p>
+          <div class="col-outcomes-list">
+            <div class="outcome-row"><span class="outcome-num">7</span><span class="outcome-sub">brands</span></div>
+            <div class="outcome-row"><span class="outcome-num">85</span><span class="outcome-sub">global markets, across multiple languages</span></div>
+            <div class="outcome-row"><span class="outcome-num">4d&rarr;2h</span><span class="outcome-sub">production planning</span></div>
+            <div class="outcome-row"><span class="outcome-num">Repeatable</span><span class="outcome-sub">local execution and creative testing from shared briefing frameworks</span></div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+
+    <div class="case-card reveal block-light">
+      <div class="card-block-header" onclick="toggleCard(this)">
+        <div class="card-block-left">
+          <p class="card-block-eyebrow">M&middot;A&middot;C Cosmetics</p>
+          <h3 class="card-block-title">Regional Creative Effectiveness Framework</h3>
+        </div>
+        <div class="card-block-right">
+          <span class="card-block-toggle">+</span>
+        </div>
+      </div>
+      <div class="card-detail">
+      <div class="card-cols">
+        <div class="card-col">
+          <p class="col-label">Overview</p>
+          <p class="col-problem-text">Regional creative effectiveness frameworks defined to improve content investment decisions.</p>
+        </div>
+        <div class="card-col">
+          <p class="col-label">What I Did</p>
+          <ul class="col-approach-list">
+            <li>Synthesised market feedback and asset usage data to inform global content strategy</li>
+            <li>Influenced global content roadmaps through regional stakeholder leadership and advocacy</li>
+            <li>Established performance feedback mechanisms between local markets and global creative teams</li>
+            <li>Piloted modular content workflows to increase production efficiency and content adaptability</li>
+          </ul>
+        </div>
+        <div class="card-col">
+          <p class="col-label">Results</p>
+          <div class="col-outcomes-list">
+            <div class="outcome-row"><span class="outcome-num">Regional</span><span class="outcome-sub">frameworks defined to guide content investment</span></div>
+            <div class="outcome-row"><span class="outcome-num">Global</span><span class="outcome-sub">content roadmaps influenced through stakeholder leadership</span></div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+
+    <div class="case-card reveal block-accent">
+      <div class="card-block-header" onclick="toggleCard(this)">
+        <div class="card-block-left">
+          <p class="card-block-eyebrow">M&middot;A&middot;C Cosmetics</p>
+          <h3 class="card-block-title">MAC Trend UK: Reactive Trend Content to Drive Sales Growth</h3>
+        </div>
+        <div class="card-block-right">
+          <span class="card-block-toggle">+</span>
+        </div>
+      </div>
+      <div class="card-detail">
+      <div class="card-cols">
+        <div class="card-col">
+          <p class="col-label">Overview</p>
+          <p class="col-problem-text">A reactive, trend-led content project built to turn emerging consumer interests and cultural conversations into sales growth.</p>
+        </div>
+        <div class="card-col">
+          <p class="col-label">What I Did</p>
+          <ul class="col-approach-list">
+            <li>Ran a reactive, trend-led content function that spotted emerging consumer interests, cultural conversations and creative opportunities</li>
+            <li>Turned trends into social-first content and fed high-performing concepts into CRM and paid social activity to drive sales</li>
+          </ul>
+        </div>
+        <div class="card-col">
+          <p class="col-label">Results</p>
+          <div class="col-outcomes-list">
+            <div class="outcome-row"><span class="outcome-num">+431%</span><span class="outcome-sub">CRM engagement</span></div>
+            <div class="outcome-row"><span class="outcome-num">+126%</span><span class="outcome-sub">sales week-on-week</span></div>
+            <div class="outcome-row"><span class="outcome-num">Sell-out</span><span class="outcome-sub">product performance</span></div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+
+    <div class="case-card reveal block-mint">
+      <div class="card-block-header" onclick="toggleCard(this)">
+        <div class="card-block-left">
+          <p class="card-block-eyebrow">British Academy of Jewellery</p>
+          <h3 class="card-block-title">From Ad to Landing Page: Website and Funnel Optimisation</h3>
+        </div>
+        <div class="card-block-right">
+          <span class="card-block-toggle">+</span>
+        </div>
+      </div>
+      <div class="card-detail">
+      <div class="card-cols">
+        <div class="card-col">
+          <p class="col-label">Overview</p>
+          <p class="col-problem-text">Marketing lead for a digital and brand transformation across website, CRM, SEO, content marketing and ecommerce.</p>
+        </div>
+        <div class="card-col">
+          <p class="col-label">What I Did</p>
+          <ul class="col-approach-list">
+            <li>Launched a website redesign, CRM, SEO, content marketing and ecommerce</li>
+            <li>Ran conversion rate optimisation across the site and funnel, carrying campaign messaging from social ads through to matching landing pages</li>
+            <li>Read on-page behaviour and fed ad performance learnings into website strategy</li>
+            <li>Grew short course sales through referral, stronger paid creative and website optimisation, lowering customer acquisition cost</li>
+          </ul>
+        </div>
+        <div class="card-col">
+          <p class="col-label">Results</p>
+          <div class="col-outcomes-list">
+            <div class="outcome-row"><span class="outcome-num">+300%</span><span class="outcome-sub">web traffic through integrated social campaigns</span></div>
+            <div class="outcome-row"><span class="outcome-num">+1500%</span><span class="outcome-sub">social referrals</span></div>
+            <div class="outcome-row"><span class="outcome-num">+23%</span><span class="outcome-sub">against business objectives, a record for the organisation</span></div>
+            <div class="outcome-row"><span class="outcome-num">Lower</span><span class="outcome-sub">customer acquisition cost</span></div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+
+    <div class="case-card reveal block-dark">
+      <div class="card-block-header" onclick="toggleCard(this)">
+        <div class="card-block-left">
+          <p class="card-block-eyebrow">Karo</p>
+          <h3 class="card-block-title">Full-Funnel Content Mapped to the Consumer Journey</h3>
+        </div>
+        <div class="card-block-right">
+          <span class="card-block-toggle">+</span>
+        </div>
+      </div>
+      <div class="card-detail">
+      <div class="card-cols">
+        <div class="card-col">
+          <p class="col-label">Overview</p>
+          <p class="col-problem-text">Creative territories mapped against awareness stages, so the content a consumer meets fits where they are in the journey.</p>
+        </div>
+        <div class="card-col">
+          <p class="col-label">What I Did</p>
+          <ul class="col-approach-list">
+            <li>Built a testing matrix of creative territories mapped against awareness stages</li>
+            <li>Ran audience-led testing from consumer research and structured UGC formats</li>
+            <li>Isolated variables against specific hypotheses and read signal by convergence across executions</li>
+            <li>Turned results into clear next steps and briefs</li>
+          </ul>
+        </div>
+        <div class="card-col">
+          <p class="col-label">Results</p>
+          <div class="col-outcomes-list">
+            <div class="outcome-row"><span class="outcome-num">+15%</span><span class="outcome-sub">hook rate for the aspirational footcare angle against clinical positioning</span></div>
+            <div class="outcome-row"><span class="outcome-num">+70%</span><span class="outcome-sub">relative CTR lift (1.2% to 2.04%)</span></div>
+            <div class="outcome-row"><span class="outcome-num">+40%</span><span class="outcome-sub">hook retention from an expert-led medical credibility direction</span></div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+
+    <div class="case-card reveal block-light">
+      <div class="card-block-header" onclick="toggleCard(this)">
+        <div class="card-block-left">
+          <p class="card-block-eyebrow">M&middot;A&middot;C Cosmetics</p>
+          <h3 class="card-block-title">Talent, Creator and Brand Partnerships</h3>
+        </div>
+        <div class="card-block-right">
+          <span class="card-block-toggle">+</span>
+        </div>
+      </div>
+      <div class="card-detail">
+      <div class="card-cols">
+        <div class="card-col">
+          <p class="col-label">Overview</p>
+          <p class="col-problem-text">Disruptive partnership and talent campaigns built for social, from brand collaborations to a creator network.</p>
+        </div>
+        <div class="card-col">
+          <p class="col-label">What I Did</p>
+          <ul class="col-approach-list">
+            <li>Concept ideation and creative direction of M&middot;A&middot;C &times; Lick, a disruptive partnership built around shade within a new product launch</li>
+            <li>Directed a World AIDS Day shoot with the RuPaul&rsquo;s Drag Race UK 2023 winners as a reactive creative opportunity, produced with an internal crew in under two weeks</li>
+            <li>Creative direction and content strategy for the Maura Higgins &times; M&middot;A&middot;C celebrity social campaign</li>
+            <li>Built a nano-creator and employee advocate network, negotiating usage rights and fees for talent, models and music</li>
+          </ul>
+        </div>
+        <div class="card-col">
+          <p class="col-label">Results</p>
+          <div class="col-outcomes-list">
+            <div class="outcome-row"><span class="outcome-num">90%</span><span class="outcome-sub">sell-through for Lick x black lipstick, $255.1M EMV</span></div>
+            <div class="outcome-row"><span class="outcome-num">+2,000%</span><span class="outcome-sub">engagement week-on-week, syndicated to 40M+ followers</span></div>
+            <div class="outcome-row"><span class="outcome-num">+300%</span><span class="outcome-sub">organic interactions week-on-week on the Lick partnership</span></div>
+            <div class="outcome-row"><span class="outcome-num">+75%</span><span class="outcome-sub">owned post engagement on Maura Higgins &times; M&middot;A&middot;C</span></div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+
+    <div class="case-card reveal block-accent">
+      <div class="card-block-header" onclick="toggleCard(this)">
+        <div class="card-block-left">
+          <p class="card-block-eyebrow">Karo</p>
+          <h3 class="card-block-title">Health and Lifestyle Partnerships: HCPs for Lamisil, Creators for CCS</h3>
+        </div>
+        <div class="card-block-right">
+          <span class="card-block-toggle">+</span>
+        </div>
+      </div>
+      <div class="card-detail">
+      <div class="card-cols">
+        <div class="card-col">
+          <p class="col-label">Overview</p>
+          <p class="col-problem-text">Health professional partnerships for Lamisil paid ads and consideration storytelling, and lifestyle creator partnerships for CCS UGC.</p>
+        </div>
+        <div class="card-col">
+          <p class="col-label">What I Did</p>
+          <ul class="col-approach-list">
+            <li>Partnered with healthcare professionals for Lamisil paid ads and consideration-stage storytelling</li>
+            <li>Built lifestyle creator partnerships for CCS UGC</li>
+            <li>Introduced a structured UGC format and creator guidelines, adopted across markets</li>
+          </ul>
+        </div>
+        <div class="card-col">
+          <p class="col-label">Results</p>
+          <div class="col-outcomes-list">
+            <div class="outcome-row"><span class="outcome-num">+40%</span><span class="outcome-sub">hook retention from an expert-led medical credibility direction (Lamisil)</span></div>
+            <div class="outcome-row"><span class="outcome-num">+21%</span><span class="outcome-sub">hook retention on CCS after the structured UGC format</span></div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+
+    </div>
+    </div>
+
+  </div>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="reveal">
+      <p class="section-label">Get In Touch</p>
+      <h2 class="section-title">Let's work together</h2>
+      <div class="divider"></div>
+      <p class="contact-intro">For creative strategy, AI creative systems or collaboration enquiries, send a message below.</p>
+      <div class="ci">
+        <div class="ci-icon" style="font-size:0.75rem;font-weight:700;">in</div>
+        <div class="ci-detail"><span>LinkedIn</span><a href="https://www.linkedin.com/in/erinrfloyd/" target="_blank">linkedin.com/in/erinrfloyd</a></div>
+      </div>
+      <div class="ci">
+        <div class="ci-icon">📍</div>
+        <div class="ci-detail"><span>Based in</span><p>United Kingdom</p></div>
+      </div>
+    </div>
+    <div class="reveal">
+      <form class="form" action="https://formspree.io/f/xaqlrvny" method="POST" onsubmit="handleSubmit(event)">
+        <div class="form-row">
+          <div class="ff"><label>Your Name</label><input type="text" name="name" placeholder="Jane Smith" required /></div>
+          <div class="ff"><label>Email Address</label><input type="email" name="email" placeholder="jane@example.com" required /></div>
+        </div>
+        <div class="ff"><label>Subject</label><input type="text" name="subject" placeholder="Project enquiry…" /></div>
+        <div class="ff"><label>Message</label><textarea name="message" placeholder="Tell me about your project…" required></textarea></div>
+        <button type="submit" class="btn-send">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <span class="footer-logo">Erin Floyd</span>
+    <p>© 2026 Erin Floyd. All rights reserved.</p>
+    <p>Performance Creative Strategy | Selected Work</p>
+  </footer>
+
+  <script>
+    function switchTab(btn) {
+      document.querySelectorAll('.tab-btn').forEach(b => { b.classList.remove('active'); b.setAttribute('aria-selected','false'); });
+      btn.classList.add('active'); btn.setAttribute('aria-selected','true');
+      document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+      const panel = document.getElementById(btn.dataset.tab);
+      panel.classList.add('active');
+      panel.querySelectorAll('.reveal').forEach(el => { if (!el.closest('.card-detail') && !el.closest('.collapsible-cards')) el.classList.add('visible'); });
+    }
+
+    function toggleCard(header) {
+      const card = header.parentElement;
+      const detail = header.nextElementSibling;
+      const expanding = !detail.classList.contains('expanded');
+      card.classList.toggle('expanded', expanding);
+      detail.classList.toggle('expanded', expanding);
+      if (expanding) detail.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
+    }
+
+    function toggleCollapse(btn, id) {
+      const panel = document.getElementById(id);
+      const expanding = !panel.classList.contains('expanded');
+      panel.classList.toggle('expanded', expanding);
+      btn.classList.toggle('expanded', expanding);
+      const label = btn.getAttribute('data-collapsed-label') || btn.textContent.replace('▾','').trim();
+      if (!btn.getAttribute('data-collapsed-label')) btn.setAttribute('data-collapsed-label', label);
+      btn.firstChild.textContent = expanding
+        ? (btn.getAttribute('data-expanded-label') || 'Show fewer examples ')
+        : (btn.getAttribute('data-collapsed-label') + ' ');
+      if (expanding) panel.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
+    }
+
+    const reveals = document.querySelectorAll('.reveal');
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach((e, i) => {
+        if (e.isIntersecting) {
+          setTimeout(() => e.target.classList.add('visible'), i * 60);
+          obs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.08 });
+    reveals.forEach(el => obs.observe(el));
+
+    async function handleSubmit(e) {
+      e.preventDefault();
+      const form = e.target;
+      const btn = form.querySelector('.btn-send');
+      btn.textContent = 'Sending…';
+      btn.disabled = true;
+      try {
+        const res = await fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        });
+        if (res.ok) {
+          btn.textContent = 'Sent!';
+          form.reset();
+        } else {
+          btn.textContent = 'Error, try again';
+          btn.disabled = false;
+        }
+      } catch {
+        btn.textContent = 'Error, try again';
+        btn.disabled = false;
+      }
+    }
+  </script>
+</body>
+</html>
